@@ -56,6 +56,11 @@ const authSlice = createSlice({
       state.token = action.payload.token;
       state.isAuthenticated = true;
 
+      Cookies.set("user_role", action.payload.user.role, {
+        expires: 7,
+        sameSite: "strict",
+        secure: process.env.NODE_ENV === "production",
+      });
       Cookies.set("auth_token", action.payload.token, {
         expires: 7, // 7 days
         sameSite: "strict",
@@ -70,6 +75,7 @@ const authSlice = createSlice({
       state.token = null;
       state.isAuthenticated = false;
 
+      Cookies.remove("user_role");
       Cookies.remove("auth_token");
       localStorage.removeItem("user");
     },
