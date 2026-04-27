@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AuthBackground } from "@/components/auth/auth-background";
-import { LoginForm } from "@/components/auth/login-form";
-import { SocialLogin } from "@/components/shared/social-login";
+import { LoginForm } from "@/components/auth/loginForm";
+import { SocialLogin } from "@/components/shared/socialLogin";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Metadata } from "next";
 

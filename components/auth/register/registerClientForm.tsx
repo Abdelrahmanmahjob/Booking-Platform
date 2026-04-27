@@ -1,17 +1,17 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { FormField } from "../shared/form-field";
-import { SubmitButton } from "../shared/submit-button";
-import { ErrorAlert } from "../shared/error-alert";
-import { SocialLogin } from "../shared/social-login";
+import { FormField } from "../../shared/formField";
+import { SubmitButton } from "../../shared/submitButton";
+import { ErrorAlert } from "../../shared/errorAlert";
+import { SocialLogin } from "../../shared/socialLogin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   RegisterClientInput,
   registerClientSchema,
 } from "@/schemas/auth.schema";
 import { useRegisterClient } from "@/hooks/auth/useRegister";
-import { formFields } from "./constant/formFields";
+import { formFields } from "../constants/formFields";
 
 export function RegisterClientForm() {
   const {

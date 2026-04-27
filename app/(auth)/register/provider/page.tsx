@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AuthBackground } from "@/components/auth/auth-background";
-import { RegisterProviderForm } from "@/components/auth/register-provider-form";
+import { RegisterProviderForm } from "@/components/auth/register/registerProviderForm";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Metadata } from "next";
 
