@@ -24,14 +24,15 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
 export function ThemeProvider({
   children,
-  defaultTheme = "system",
+  defaultTheme = "dark",
   storageKey = "booking-platform-theme",
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Load theme from localStorage
+    setMounted(true);
     const savedTheme = localStorage.getItem(storageKey) as Theme;
     if (savedTheme) {
       setTheme(savedTheme);
@@ -39,8 +40,9 @@ export function ThemeProvider({
   }, [storageKey]);
 
   useEffect(() => {
-    const root = window.document.documentElement;
+    if (!mounted) return;
 
+    const root = window.document.documentElement;
     root.classList.remove("light", "dark");
 
     if (theme === "system") {
@@ -48,13 +50,12 @@ export function ThemeProvider({
         .matches
         ? "dark"
         : "light";
-
       root.classList.add(systemTheme);
       return;
     }
 
     root.classList.add(theme);
-  }, [theme]);
+  }, [theme, mounted]);
 
   const value = {
     theme,
@@ -63,6 +64,10 @@ export function ThemeProvider({
       setTheme(theme);
     },
   };
+
+  if (!mounted) {
+    return <>{children}</>;
+  }
 
   return (
     <ThemeProviderContext.Provider {...props} value={value}>

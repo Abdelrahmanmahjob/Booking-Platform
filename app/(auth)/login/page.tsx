@@ -2,7 +2,6 @@ import Link from "next/link";
 import { AuthBackground } from "@/components/auth/auth-background";
 import { LoginForm } from "@/components/auth/loginForm";
 import { SocialLogin } from "@/components/shared/socialLogin";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,7 +13,6 @@ export default function LoginPage() {
   return (
     <div className="w-full min-h-screen flex items-center justify-center p-4 relative">
       <AuthBackground />
-      <ThemeToggle />
 
       <div className="w-full max-w-md">
         {/* Card */}

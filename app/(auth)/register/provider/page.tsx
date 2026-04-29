@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { AuthBackground } from "@/components/auth/auth-background";
 import { RegisterProviderForm } from "@/components/auth/register/registerProviderForm";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,7 +12,6 @@ export default function RegisterProviderPage() {
   return (
     <div className="w-full min-h-screen flex items-center justify-center p-4 relative">
       <AuthBackground />
-      <ThemeToggle />
 
       <div className="w-full max-w-lg">
         {/* Card */}

@@ -7,7 +7,6 @@ export function makeQueryClient() {
         staleTime: 1000 * 30,
         retry: 2,
         refetchOnWindowFocus: true,
-        refetchOnReconnect: true,
       },
     },
   });

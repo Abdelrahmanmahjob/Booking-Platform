@@ -115,6 +115,7 @@ export interface Booking {
   notes?: string;
   cancelReason?: string;
   createdAt: string;
+  updatedAt: string;
   confirmedAt?: string;
   completedAt?: string;
   cancelledAt?: string;

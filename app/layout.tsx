@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import { Providers } from "@/components/providers";
-import { themeScript } from "@/lib/theme-script";
 import "./globals.css";
+import { Poppins } from "next/font/google";
+import { Navbar } from "@/components/shared/navbar";
+
+const font = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
-  title: "Booking Platform",
-  description: "Professional booking management platform",
+  title: "BookIt | Professional Booking Platform",
+  description: "Book professional services with ease",
 };
 
 export default function RootLayout({
@@ -15,15 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: themeScript,
-          }}
-        />
-      </head>
-      <body suppressHydrationWarning>
-        <Providers>{children}</Providers>
+      <body suppressHydrationWarning className={font.className}>
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   );
