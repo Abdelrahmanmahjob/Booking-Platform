@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Providers } from "@/components/providers";
+import { themeScript } from "@/lib/theme-script";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import { Navbar } from "@/components/shared/navbar";
@@ -21,6 +22,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: themeScript,
+          }}
+        />
+      </head>
       <body suppressHydrationWarning className={font.className}>
         <Providers>
           <Navbar />
