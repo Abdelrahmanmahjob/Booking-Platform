@@ -15,8 +15,12 @@ export function useCreateService() {
     { data: ServiceInput; providerId: string }
   >({
     mutationFn: ({ data, providerId }) => servicesApi.create(data, providerId),
-    onSuccess: () => {
+    onSuccess: (_, variables) => {
       queryClient.invalidateQueries({ queryKey: serviceKeys.all });
+
+      queryClient.invalidateQueries({
+        queryKey: serviceKeys.byProvider(variables.providerId),
+      });
     },
     onError: (error) => {
       console.error("Error creating service:", error);

@@ -112,6 +112,8 @@ export interface Booking {
   providerId: string;
   slotId: string;
   status: BookingStatus;
+  date: string;
+  time: string;
   notes?: string;
   cancelReason?: string;
   createdAt: string;

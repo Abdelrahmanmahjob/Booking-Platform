@@ -48,6 +48,7 @@ export const servicesApi = {
     const serviceDoc = await addDoc(servicesCollection, {
       ...data,
       providerId,
+      isActive: true,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     });
@@ -55,6 +56,7 @@ export const servicesApi = {
       id: serviceDoc.id,
       ...data,
       providerId,
+      isActive: true,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     } as Service;
