@@ -8,9 +8,7 @@ interface ServiceDetailPageProps {
 }
 
 // Dynamic metadata
-export async function generateMetadata({
-  params,
-}: ServiceDetailPageProps): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: `Service Details | BookIt`,
     description: "Book this amazing service",

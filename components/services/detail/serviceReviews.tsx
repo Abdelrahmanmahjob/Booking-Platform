@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 
-interface ServiceReviewsProps {
-  serviceId: string;
-}
+// interface ServiceReviewsProps {
+//   serviceId: string;
+// }
 
 const MOCK_REVIEWS = [
   {
@@ -36,7 +36,7 @@ const MOCK_REVIEWS = [
   },
 ];
 
-export function ServiceReviews({ serviceId }: ServiceReviewsProps) {
+export function ServiceReviews() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

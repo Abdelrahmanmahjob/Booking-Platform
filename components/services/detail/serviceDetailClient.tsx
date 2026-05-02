@@ -58,7 +58,8 @@ export function ServiceDetailClient({ serviceId }: ServiceDetailClientProps) {
             {/* Left Column - Service Info */}
             <div className="lg:col-span-2 space-y-6">
               <ServiceInfo service={service as Service} />
-              <ServiceReviews serviceId={serviceId} />
+              {/* <ServiceReviews serviceId={serviceId} /> */}
+              <ServiceReviews />
             </div>
 
             {/* Right Column - Provider Card (Sticky) */}
