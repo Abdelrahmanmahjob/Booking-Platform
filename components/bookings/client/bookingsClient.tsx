@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useAppSelector } from "@/lib/hooks";
 import { selectCurrentUser } from "@/store/slices/authSlice";
 import { useClientBookings } from "@/hooks/booking/useClientBookings";
-import { BookingCard } from "./bookingCard";
+import { BookingCard } from "./booking-card/bookingCard";
 import { BookingsFilter } from "./bookingsFilter";
 import { BookingsSkeleton } from "./bookingsSkeleton";
 import { BookingsEmpty } from "./bookingsEmpty";
