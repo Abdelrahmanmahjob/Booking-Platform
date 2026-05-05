@@ -12,6 +12,7 @@ export function StatsCards() {
   const { data: services = [] } = useProviderServices(user?.id || "");
   const { data: bookings = [] } = useProviderBookings(user?.id || "");
 
+  console.log(bookings);
   const totalServices = services.length;
   const totalBookings = bookings.length;
 

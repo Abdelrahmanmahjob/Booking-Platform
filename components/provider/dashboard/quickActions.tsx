@@ -8,7 +8,7 @@ const ACTIONS = [
     label: "Add Service",
     description: "Create a new service",
     icon: "➕",
-    href: "/provider/services/new",
+    href: "/provider/services",
     color:
       "from-blue-500/10 to-indigo-500/10 border-blue-200 dark:border-blue-800",
     iconBg: "bg-blue-100 dark:bg-blue-950",

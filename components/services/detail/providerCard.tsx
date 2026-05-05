@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Service } from "@/types";
 import { useProvider } from "@/hooks/provider/useProvider";
 import { useState } from "react";
+import { BookingModal } from "@/components/booking/bookingModal";
 
 interface ProviderCardProps {
   service: Service;
@@ -322,26 +323,17 @@ export function ProviderCard({ service }: ProviderCardProps) {
       </div>
 
       {/* Booking Modal Placeholder */}
-      {showBookingModal && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-card border border-border rounded-2xl p-6 mx-4 max-w-md w-full"
-          >
-            <h3 className="text-lg font-bold mb-4">Book {service.name}</h3>
-            <p className="text-muted-foreground mb-4">
-              Booking modal coming in BOOK-302...
-            </p>
-            <button
-              onClick={() => setShowBookingModal(false)}
-              className="w-full px-4 py-3 bg-primary text-primary-foreground rounded-xl font-medium"
-            >
-              Close
-            </button>
-          </motion.div>
-        </div>
-      )}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+      >
+        <BookingModal
+          isOpen={showBookingModal}
+          onClose={() => setShowBookingModal(false)}
+          service={service}
+          providerId={service.providerId}
+        />
+      </motion.div>
     </motion.div>
   );
 }

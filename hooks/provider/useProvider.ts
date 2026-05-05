@@ -9,6 +9,6 @@ export function useProvider(providerId: string) {
     queryKey: ["provider", providerId],
     queryFn: () => providersApi.getById(providerId),
     enabled: !!providerId,
-    staleTime: 5 * 60 * 1000, // 5 minutes - provider data doesn't change often
+    staleTime: 5 * 60 * 1000,
   });
 }

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Service } from "@/types";
 import { useState } from "react";
+import { BookingModal } from "@/components/booking/bookingModal";
 
 const CATEGORY_CONFIG = {
   medical: {
@@ -177,20 +178,12 @@ export function ServiceHero({ service }: ServiceHeroProps) {
       </div>
 
       {/* TODO: Booking Modal */}
-      {showBookingModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-card p-6 rounded-2xl">
-            <h3 className="text-lg font-bold mb-4">Booking Modal</h3>
-            <p className="text-muted-foreground mb-4">Coming in next task...</p>
-            <button
-              onClick={() => setShowBookingModal(false)}
-              className="px-4 py-2 bg-primary text-primary-foreground rounded-xl"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+      <BookingModal
+        isOpen={showBookingModal}
+        onClose={() => setShowBookingModal(false)}
+        service={service}
+        providerId={service.providerId}
+      />
     </motion.div>
   );
 }
