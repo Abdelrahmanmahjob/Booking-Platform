@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Service } from "@/types";
 import { useState } from "react";
-import { BookingModal } from "@/components/booking/bookingModal";
+import { BookingModal } from "@/components/bookings/bookingModal";
 
 const CATEGORY_CONFIG = {
   medical: {

@@ -12,6 +12,7 @@ import { useAppSelector } from "@/lib/hooks";
 import { selectCurrentUser } from "@/store/slices/authSlice";
 import { useCreateBooking } from "@/hooks/booking";
 import { toast } from "react-toastify";
+import Confetti from "react-confetti";
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -67,6 +68,7 @@ export function BookingModal({
     createBooking(bookingData, {
       onSuccess: (newBooking) => {
         console.log("✅ Booking created:", newBooking);
+        <Confetti width={window.innerWidth} height={window.innerHeight} />;
         setStep("success");
       },
       onError: (error) => {

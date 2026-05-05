@@ -14,7 +14,7 @@ import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 const CLIENT_LINKS = [
   { href: "/services", label: "Services", icon: "🔍" },
-  { href: "/bookings", label: "My Bookings", icon: "📅" },
+  { href: "/my-bookings", label: "My Bookings", icon: "📅" },
 ];
 
 const PROVIDER_LINKS = [

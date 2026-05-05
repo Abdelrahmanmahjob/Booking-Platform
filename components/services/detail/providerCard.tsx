@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Service } from "@/types";
 import { useProvider } from "@/hooks/provider/useProvider";
 import { useState } from "react";
-import { BookingModal } from "@/components/booking/bookingModal";
+import { BookingModal } from "@/components/bookings/bookingModal";
 
 interface ProviderCardProps {
   service: Service;
