@@ -26,9 +26,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script
-          dangerouslySetInnerHTML={{
-            __html: themeScript,
-          }}
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: themeScript }}
         />
       </head>
       <body suppressHydrationWarning className={font.className}>
