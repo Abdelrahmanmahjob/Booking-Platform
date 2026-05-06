@@ -84,7 +84,7 @@ export function UserProfile({ user }: UserProfileProps) {
                   {user.email}
                 </p>
               </div>
-              <div className="md:hidden flex flex-col gap-2 p-2">
+              <div className="md:hidden flex flex-col gap-2 py-2">
                 {links.map((link) => {
                   const isActive = pathname === link.href;
 
