@@ -59,13 +59,14 @@ export function HowItWorksSection() {
             >
               {/* Image */}
               <div className="flex-1 relative">
-                <div className="relative aspect-4/3 rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative min-h-[200px] aspect-4/3 rounded-3xl overflow-hidden shadow-2xl">
                   <Image
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     src={step.image}
                     alt={step.title}
                     fill
                     className="object-cover"
+                    priority={index === 0}
                   />
                 </div>
                 <div className="absolute -z-10 -inset-6 bg-primary/5 rounded-3xl" />
