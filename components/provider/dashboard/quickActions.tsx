@@ -22,15 +22,6 @@ const ACTIONS = [
       "from-green-500/10 to-emerald-500/10 border-green-200 dark:border-green-800",
     iconBg: "bg-green-100 dark:bg-green-950",
   },
-  {
-    label: "Edit Profile",
-    description: "Update your business info",
-    icon: "✏️",
-    href: "/provider/profile",
-    color:
-      "from-purple-500/10 to-violet-500/10 border-purple-200 dark:border-purple-800",
-    iconBg: "bg-purple-100 dark:bg-purple-950",
-  },
 ];
 
 export function QuickActions() {
@@ -40,7 +31,7 @@ export function QuickActions() {
         Quick Actions
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {ACTIONS.map((action, i) => (
           <motion.div
             key={action.label}
