@@ -15,6 +15,7 @@ import { DesktopNav } from "./desktop-nav";
 import { MobileMenu } from "./mobile-menu";
 import { UserProfile } from "./user-profile";
 import { AuthButtons } from "./auth-buttons";
+import Image from "next/image";
 
 const CLIENT_LINKS = [
   { href: "/services", label: "Services", icon: "🔍" },
@@ -51,10 +52,8 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-sm shadow-primary/50 group-hover:scale-110 transition-transform">
-              <svg className="w-4 h-4 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
+            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center shadow-sm shadow-primary/50 group-hover:scale-110 transition-transform">
+              <Image src="/favicon.ico" alt="Logo" width={32} height={32} />
             </div>
             <span className="font-bold text-lg text-foreground">
               Book<span className="text-primary">It</span>
@@ -85,9 +84,24 @@ export function Navbar() {
                   animate={isMenuOpen ? "open" : "closed"}
                   className="w-5 h-5 flex flex-col justify-center gap-1"
                 >
-                  <motion.span variants={{ open: { rotate: 45, y: 6 }, closed: { rotate: 0, y: 0 } }} className="block h-0.5 w-5 bg-current rounded-full origin-center" />
-                  <motion.span variants={{ open: { opacity: 0 }, closed: { opacity: 1 } }} className="block h-0.5 w-5 bg-current rounded-full" />
-                  <motion.span variants={{ open: { rotate: -45, y: -6 }, closed: { rotate: 0, y: 0 } }} className="block h-0.5 w-5 bg-current rounded-full origin-center" />
+                  <motion.span
+                    variants={{
+                      open: { rotate: 45, y: 6 },
+                      closed: { rotate: 0, y: 0 },
+                    }}
+                    className="block h-0.5 w-5 bg-current rounded-full origin-center"
+                  />
+                  <motion.span
+                    variants={{ open: { opacity: 0 }, closed: { opacity: 1 } }}
+                    className="block h-0.5 w-5 bg-current rounded-full"
+                  />
+                  <motion.span
+                    variants={{
+                      open: { rotate: -45, y: -6 },
+                      closed: { rotate: 0, y: 0 },
+                    }}
+                    className="block h-0.5 w-5 bg-current rounded-full origin-center"
+                  />
                 </motion.div>
               </button>
             )}
